@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,6 @@
   <link rel="stylesheet" href="./assets/css/colors/leaf.css">
   <link rel="preload" href="./assets/css/fonts/space.css" as="style" onload="this.rel='stylesheet'">
 </head>
-
 <body>
   <div class="content-wrapper">
     <header class="wrapper bg-soft-primary my-1">
@@ -22,7 +20,7 @@
         <div class="container flex-lg-row flex-nowrap align-items-center">
           <div class="navbar-brand w-100">
             <a href="./index.html">
-              <img src="./assets/img/logo-dark.png" srcset="./assets/img/logo-dark.png" alt="" />
+              <img src="./assets/img/logo-dark.png" alt="">
             </a>
           </div>
           <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -47,13 +45,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="./frequently-asked-questions.html">F.A.Q.</a>
                 </li>
-
               </ul>
-              <!-- /.navbar-nav -->
               <div class="offcanvas-footer d-lg-none">
                 <div>
-                  <a href="hunter@compactmydumpster.com" class="link-inverse">hunter@compactmydumpster.com</a>
-                  <br />813-330-3222<br />
+                  <a href="mailto:hunter@compactmydumpster.com" class="link-inverse">hunter@compactmydumpster.com</a>
+                  <br>813-330-3222<br>
                   <nav class="nav social social-white mt-4">
                     <a href="#"><i class="uil uil-twitter"></i></a>
                     <a href="#"><i class="uil uil-facebook-f"></i></a>
@@ -61,33 +57,25 @@
                     <a href="#"><i class="uil uil-instagram"></i></a>
                     <a href="#"><i class="uil uil-youtube"></i></a>
                   </nav>
-                  <!-- /.social -->
                 </div>
               </div>
-              <!-- /.offcanvas-footer -->
             </div>
-            <!-- /.offcanvas-body -->
           </div>
-          <!-- /.navbar-collapse -->
           <div class="navbar-other w-100 d-flex ms-auto">
             <ul class="navbar-nav flex-row align-items-center ms-auto">
               <li class="nav-item d-none d-md-block">
-                <a href="#" class="btn btn-expand btn-primary rounded-pill">
+                <a href="request.html" class="btn btn-expand btn-primary rounded-pill">
                   <i class="uil uil-arrow-right"></i>
-                  <span>Book A Free Demonstration</span>
+                  <span>Schedule A Crush</span>
                 </a>
               </li>
               <li class="nav-item d-lg-none">
                 <button class="hamburger offcanvas-nav-btn"><span></span></button>
               </li>
             </ul>
-            <!-- /.navbar-nav -->
           </div>
-          <!-- /.navbar-other -->
         </div>
-        <!-- /.container -->
       </nav>
-      <!-- /.navbar -->
     </header>
 
 <section class="wrapper bg-gradient-primary">
@@ -105,7 +93,7 @@
       <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start">
         <h1 class="display-1 mb-5 mx-md-n5 mx-lg-0">We crush trash to save you <span class="underline-3 style-1 leaf">cash!</span></h1>
         <p class="lead fs-lg mb-7">Open-top dumpsters with unused space require frequent and expensive hauling services.</p>
-        <span><a class="btn btn-md btn-primary btn-icon btn-icon-end">Schedule Now</a></span>
+        <span><a class="btn btn-md btn-primary btn-icon btn-icon-end" href="request.html">Schedule Now</a></span>
       </div>
       <!-- /column -->
     </div>
@@ -151,117 +139,36 @@
     <div class="row">
       <div class="col-xl-12 mx-auto">
         <div class="row gy-10 gx-lg-8 gx-xl-12">
-          <div class="col-lg-8">
-            <form class="contact-form needs-validation" method="post" action="./assets/php/contact.php" novalidate>
-              <div class="messages"></div>
-              <div class="row gx-4">
-                <div class="col-md-6">
-                  <div class="form-floating mb-4">
-                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Jane" required>
-                    <label for="form_name">First Name</label>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                      Please enter your first name.
-                    </div>
-                  </div>
-                </div>
-                <!-- /column -->
-                <div class="col-md-6">
-                  <div class="form-floating mb-4">
-                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Doe" required>
-                    <label for="form_lastname">Last Name</label>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                      Please enter your last name.
-                    </div>
-                  </div>
-                </div>
-                <!-- /column -->
-                <div class="col-md-6">
-                  <div class="form-floating mb-4">
-                    <input id="form_email" type="email" name="email" class="form-control" placeholder="jane.doe@example.com" required>
-                    <label for="form_email">Your Email Address</label>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                      Please provide a valid email address.
-                    </div>
-                  </div>
-                </div>
-                <!-- /column -->
-                <div class="col-md-6">
-                  <div class="form-floating mb-4">
-                    <input id="form_email" type="phone" name="phone" class="form-control" placeholder="813-330-3222" required>
-                    <label for="form_email">Phone Number</label>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                      Please provide a valid phone number.
-                    </div>
-                  </div>
-                </div>
-                <!-- /column -->
-
-                <div class="col-12">
-                  <div class="form-floating mb-4">
-                    <textarea id="form_message" name="message" class="form-control" placeholder="Your message" style="height: 40px" required></textarea>
-                    <label for="form_message">Message</label>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                      Please enter your messsage.
-                    </div>
-                  </div>
-                </div>
-                <!-- /column -->
-
-                <div class="col-2">
-                  <input type="submit" class="btn btn-primary rounded-pill btn-send mb-1" value="Send A Message">
-                </div>
-
-
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-            </form>
-            <!-- /form -->
-
-          </div>
-          <!--/column -->
-
           <div class="col-lg-4">
             <div class="d-flex flex-row">
               <div>
                 <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-location-pin-alt"></i> </div>
               </div>
               <div>
-                <h5 class="mb-1">Based In</h5>
+                <h3 class="mb-1">Based In</h3>
                 <address>Tampa, Florida</address>
               </div>
             </div>
+          </div>
+          <div class="col-lg-3">
             <div class="d-flex flex-row">
               <div>
                 <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
               </div>
               <div>
-                <h5 class="mb-1">Phone</h5>
+                <h3 class="mb-1">Phone</h3>
                 <p>813-330-3222</p>
               </div>
             </div>
+          </div>
+          <div class="col-lg-4">
             <div class="d-flex flex-row">
               <div>
                 <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-envelope"></i> </div>
               </div>
               <div>
-                <h5 class="mb-1">E-mail</h5>
-                <p class="mb-0"><a href="mailto:sandbox@email.com" class="text-body">hunter@compactmydumpster.com</a></p>
+                <h3 class="mb-1">E-mail</h3>
+                <p class="mb-0"><a href="hunter@compactmydumpster.com" class="text-body">hunter@compactmydumpster.com</a></p>
               </div>
             </div>
           </div>
@@ -284,7 +191,7 @@
             <br>
             <h3 class="display-2 mb-5">Optimizing open-top dumpsters for waste removal</h3>
             <p class="mb-7">Compact My Dumpster operates throughout industries including, but not limited to: construction, manufacturing, distribution/warehousing, retail, food service.</p>
-            <a href="#" class="btn btn-lg btn-primary btn-icon btn-icon-end">Request A Quote <i class="uil uil-arrow-up-right"></i></a>
+            <a href="request.html" class="btn btn-lg btn-primary btn-icon btn-icon-end">Request A Quote <i class="uil uil-arrow-up-right"></i></a>
             <a href="#" class="btn btn-soft-ash square-pill" data-bs-toggle="modal" data-bs-target="#modal-02">Join Our Mailing List</a>
   
 
