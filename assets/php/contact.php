@@ -29,10 +29,10 @@ $okMessage = 'We have received your message. Stay tuned, we’ll get back to you
 $errorMessage = 'There was an error while submitting the form. Please try again later or email us manually';
 
 // SMTP settings
-$smtpUse = true; // Set to true to enable SMTP authentication
-$smtpHost = '127.0.0.1'; // Enter SMTP host ie. smtp.gmail.com
+$smtpUse = false; // Set to true to enable SMTP authentication
+$smtpHost = ''; // Enter SMTP host ie. smtp.gmail.com
 $smtpUsername = 'jay@artistservic.es'; // SMTP username ie. gmail address
-$smtpPassword = 'hSoqdncAEW0wWjyPMg--Xw'; // SMTP password ie gmail password
+$smtpPassword = ''; // SMTP password ie gmail password
 $smtpSecure = 'tls'; // Enable TLS or SSL encryption
 $smtpAutoTLS = false; // Enable Auto TLS
 $smtpPort = 1025; // TCP port to connect to
