@@ -8,31 +8,85 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-694BNL6FGE');
 </script>
 
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Compact My Dumpster is crushing trash across Orlando, Tampa, Bradenton, and surrounding counties to help your business save more cash!">
-<meta name="keywords" content="dumpster, hauling, trash, compacting, uhaul, roll-off, open-top, remodeling, landscaping, home renovation, trash solutions, waste, management, Orlando, Tampa, Bradenton, counties">
-<meta name="author" content="Compact My Dumpster">
-  <title>Compact My Dumpster | Crushing trash to save you cash!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compact My Dumpster now serves 10 Florida counties — Tampa Bay, Central Florida, and South Florida including Broward and Palm Beach.">
+  <meta name="keywords" content="dumpster compaction, Tampa, Orlando, Clearwater, Fort Lauderdale, West Palm Beach, Broward, Palm Beach, Orange, Seminole, Florida, service area">
+  <meta name="author" content="Compact My Dumpster">
+  <title>Service Area | Compact My Dumpster</title>
   <link rel="shortcut icon" href="./assets/img/favicon.png">
   <link rel="stylesheet" href="./assets/css/plugins.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/colors/leaf.css">
   <link rel="preload" href="./assets/css/fonts/space.css" as="style" onload="this.rel='stylesheet'">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PDML94KD8">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4PDML94KD8');
-</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://omnisnippet1.com">
+  <link rel="preconnect" href="https://basemaps.cartocdn.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="canonical" href="https://www.compactmydumpster.com/service-area.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.compactmydumpster.com/service-area.html">
+  <meta property="og:title" content="Service Area | Compact My Dumpster">
+  <meta property="og:description" content="Now serving 10 Florida counties across Tampa Bay, Central Florida, and South Florida.">
+  <meta property="og:image" content="https://www.compactmydumpster.com/assets/img/service_area.jpg">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    #service-map {
+      height: 540px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .county-card {
+      cursor: default;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .county-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10) !important;
+    }
+    .county-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .leaflet-popup-content-wrapper {
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .leaflet-popup-content {
+      margin: 12px 16px;
+      min-width: 160px;
+    }
+    #map-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.9);
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #555;
+      z-index: 999;
+      pointer-events: none;
+    }
+    #map-wrapper {
+      position: relative;
+    }
+    @media (max-width: 767px) {
+      #service-map { height: 380px; }
+    }
+  </style>
 </head>
 <body>
   <div class="content-wrapper">
@@ -41,7 +95,7 @@
         <div class="container flex-lg-row flex-nowrap align-items-center">
           <div class="navbar-brand w-100">
             <a href="./index.html">
-              <img src="./assets/img/logo-dark.png" alt="">
+              <img src="./assets/img/logo-dark.png" alt="Compact My Dumpster">
             </a>
           </div>
           <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -58,7 +112,7 @@
                   <a class="nav-link" href="./pricing.html">Pricing</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./service-area.html">Service Area</a>
+                  <a class="nav-link active" href="./service-area.html">Service Area</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="./how-it-works.html">How It Works</a>
@@ -70,20 +124,23 @@
               <div class="offcanvas-footer d-lg-none">
                 <div>
                   <a href="mailto:hunter@compactmydumpster.com" class="link-inverse">hunter@compactmydumpster.com</a>
-                  <br>813-330-3222<br>
+                  <br><a href="tel:+18133303222" class="text-body">813-330-3222</a><br>
                   <nav class="nav social social-white mt-4">
-                    <a href="#"><i class="uil uil-twitter"></i></a>
-                    <a href="#"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#"><i class="uil uil-dribbble"></i></a>
-                    <a href="#"><i class="uil uil-instagram"></i></a>
-                    <a href="#"><i class="uil uil-youtube"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100087289667616"><i class="uil uil-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/compactmydumpster/"><i class="uil uil-instagram"></i></a>
+                    <a href="https://www.youtube.com/@compactmydumpster"><i class="uil uil-youtube"></i></a>
                   </nav>
                 </div>
               </div>
-            </div> 
+            </div>
           </div>
           <div class="navbar-other w-100 d-flex ms-auto">
             <ul class="navbar-nav flex-row align-items-center ms-auto">
+              <li class="nav-item d-none d-lg-block me-2">
+                <a href="tel:+18133303222" class="fw-bold text-body" style="white-space:nowrap">
+                  <i class="uil uil-phone me-1"></i>813-330-3222
+                </a>
+              </li>
               <li class="nav-item d-none d-md-block">
                 <a href="request.html" class="btn btn-expand btn-primary rounded-pill">
                   <i class="uil uil-arrow-right"></i>
@@ -98,77 +155,326 @@
         </div>
       </nav>
     </header>
-<section class="wrapper bg-light">
-  <div class="container py-14 py-md-16">
-    <div class="row gx-lg-8 gx-xl-8 gy-8 align-items-center">
-      <div class="col-md-8 col-lg-8 col-xl-8 order-lg-2 position-relative">
-        <figure class="rounded"><img src="./assets/img/service_area.jpg" srcset="./assets/img/service_area.jpg" alt=""></figure>
+
+    <!-- Page Hero -->
+    <section class="wrapper bg-gradient-primary">
+      <div class="container pt-12 pb-10 text-center">
+        <div class="row">
+          <div class="col-md-9 col-lg-7 mx-auto">
+            <h1 class="display-2 mb-4">Our Service Area</h1>
+            <p class="lead fs-lg mb-0">We crush dumpsters across <strong>10 Florida counties</strong> — from Tampa Bay and Central Florida all the way down to South Florida. Hover over a county on the map to explore.</p>
+          </div>
+        </div>
       </div>
-      <!--/column -->
-      <div class="col-lg-4">
-        <h2 class="display-4 mb-3">Servicing Tampa, Orlando, Clearwater, St. Petersburg, Brandon, Parrish, and more.</h2>
-        <p class="mb-3"></p>
-          
+    </section>
 
-<table class="table table-hover">
-        <tr>
-            <td>Pinellas County</td>
-        </tr>
-        <tr>
-            <td>Hillsborough County</td>
-        </tr>
-        <tr>
-            <td>Pasco County</td>
-        </tr>
-        <tr>
-            <td>Manatee County</td>
-        </tr>
-        <tr>
-            <td>Sarasota County</td>
-        </tr>
-        <tr>
-            <td>Polk County</td>
-        </tr>
-        <tr>
-            <td>& more!</td>
-        </tr>
-</table>
-
-
-        </p>
-  <!--/column -->
-
-
-        <!--/.row -->
+    <!-- Interactive Map -->
+    <section class="wrapper">
+      <div id="map-wrapper">
+        <div id="map-loading">Loading county boundaries…</div>
+        <div id="service-map" role="region" aria-label="Interactive map of Compact My Dumpster service areas"></div>
       </div>
-      <!--/column -->
-    </div>
-    <!--/.row -->
-  </div>
-  <!-- /.container -->
-</section>
-<!-- /section -->
+    </section>
+
+    <!-- County Cards -->
+    <section class="wrapper bg-light">
+      <div class="container py-14 py-md-16">
+        <div class="row text-center mb-10">
+          <div class="col-md-10 col-lg-8 mx-auto">
+            <h2 class="fs-16 text-uppercase text-muted mb-3">Coverage</h2>
+            <h3 class="display-4 mb-3">Counties We Serve</h3>
+            <p class="lead">Browse all 10 counties below. <span class="badge bg-leaf rounded-pill ms-1">NEW</span> marks recently added areas.</p>
+          </div>
+        </div>
+
+        <div class="row gy-5 gx-md-6">
+
+          <!-- Hillsborough -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 shadow-sm border-0">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-leaf text-leaf mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Hillsborough County</h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">Tampa, Brandon, Plant City, Temple Terrace</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pinellas -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 shadow-sm border-0">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-leaf text-leaf mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Pinellas County</h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">St. Petersburg, Clearwater, Largo, Tarpon Springs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pasco -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 shadow-sm border-0">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-leaf text-leaf mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Pasco County</h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">New Port Richey, Zephyrhills, Dade City, Land O Lakes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manatee -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 shadow-sm border-0">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-leaf text-leaf mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Manatee County</h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">Bradenton, Palmetto, Parrish, Lakewood Ranch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sarasota -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 shadow-sm border-0">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-leaf text-leaf mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Sarasota County</h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">Sarasota, Venice, North Port, Osprey</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Polk -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 shadow-sm border-0">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-leaf text-leaf mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Polk County</h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">Lakeland, Winter Haven, Haines City, Bartow</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orange -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 shadow-sm border-0">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-leaf text-leaf mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Orange County</h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">Orlando, Winter Park, Apopka, Ocoee</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seminole -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 shadow-sm border-0">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-leaf text-leaf mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Seminole County</h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">Sanford, Altamonte Springs, Casselberry, Longwood</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Broward — NEW -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 border-0" style="box-shadow: 0 0 0 2px #7cb85c, 0 4px 16px rgba(92,186,71,0.15);">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-green text-green mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Broward County <span class="badge bg-leaf rounded-pill" style="font-size:0.6rem;vertical-align:middle;">NEW</span></h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">Fort Lauderdale, Hollywood, Pompano Beach, Miramar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Palm Beach — NEW -->
+          <div class="col-md-6 col-xl-3">
+            <div class="card county-card h-100 border-0" style="box-shadow: 0 0 0 2px #7cb85c, 0 4px 16px rgba(92,186,71,0.15);">
+              <div class="card-body d-flex flex-row align-items-start gap-3">
+                <div class="county-icon bg-soft-green text-green mt-1"><i class="uil uil-map-marker"></i></div>
+                <div>
+                  <h5 class="mb-1">Palm Beach County <span class="badge bg-leaf rounded-pill" style="font-size:0.6rem;vertical-align:middle;">NEW</span></h5>
+                  <p class="text-muted mb-0" style="font-size:0.85rem;">West Palm Beach, Boca Raton, Delray Beach, Boynton Beach</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.row -->
+
+        <!-- Expansion callout -->
+        <div class="row mt-10">
+          <div class="col-md-10 col-lg-8 mx-auto text-center">
+            <div class="card bg-soft-leaf border-0 rounded-3 py-6 px-5">
+              <p class="mb-1 fs-15"><i class="uil uil-rocket me-2 text-leaf"></i><strong>We're growing!</strong> If you're outside our listed counties and want to discuss service, give us a call or send us a message — we'll do our best to accommodate you.</p>
+              <a href="request.html" class="btn btn-sm btn-primary rounded-pill mt-4">Get In Touch</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+    <!-- CTA Section -->
+    <section class="wrapper bg-soft-primary">
+      <div class="container py-14 text-center">
+        <div class="row">
+          <div class="col-md-8 col-lg-6 mx-auto">
+            <h2 class="display-4 mb-3">Ready to save on dumpster hauls?</h2>
+            <p class="lead mb-7">Schedule your first crush today — no commitment required.</p>
+            <a href="request.html" class="btn btn-lg btn-primary rounded-pill btn-icon btn-icon-end">Schedule A Crush <i class="uil uil-arrow-up-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.content-wrapper -->
+
   <footer>
     <div class="container py-7">
       <div class="d-md-flex align-items-center justify-content-between">
-        <p class="mb-2 mb-lg-0">© 2023 American Trash LLC. All rights reserved.</p>
+        <p class="mb-2 mb-lg-0">© 2025 American Trash LLC. All rights reserved.</p>
         <nav class="nav social social-muted mb-0 text-md-end">
-          <a href="#"><i class="uil uil-facebook-f"></i></a>
-          <a href="#"><i class="uil uil-instagram"></i></a>
-          <a href="#"><i class="uil uil-youtube"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100087289667616"><i class="uil uil-facebook-f"></i></a>
+          <a href="https://www.instagram.com/compactmydumpster/"><i class="uil uil-instagram"></i></a>
+          <a href="https://www.youtube.com/@compactmydumpster"><i class="uil uil-youtube"></i></a>
         </nav>
-        <!-- /.social -->
       </div>
     </div>
-    <!-- /.container -->
   </footer>
+
   <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
   </div>
+
+  <!-- Leaflet + TopoJSON — loaded before site theme to avoid conflicts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
   <script src="./assets/js/plugins.js"></script>
   <script src="./assets/js/theme.js"></script>
+
+  <script>
+    // County data keyed by 5-digit FIPS (state 12 = Florida)
+    var TARGET_COUNTIES = {
+      '12057': { name: 'Hillsborough County', cities: 'Tampa, Brandon, Plant City, Temple Terrace',             isNew: false },
+      '12103': { name: 'Pinellas County',      cities: 'St. Petersburg, Clearwater, Largo, Tarpon Springs',    isNew: false },
+      '12101': { name: 'Pasco County',         cities: 'New Port Richey, Zephyrhills, Dade City, Land O Lakes',isNew: false },
+      '12081': { name: 'Manatee County',       cities: 'Bradenton, Palmetto, Parrish, Lakewood Ranch',         isNew: false },
+      '12115': { name: 'Sarasota County',      cities: 'Sarasota, Venice, North Port, Osprey',                 isNew: false },
+      '12105': { name: 'Polk County',          cities: 'Lakeland, Winter Haven, Haines City, Bartow',          isNew: false },
+      '12095': { name: 'Orange County',        cities: 'Orlando, Winter Park, Apopka, Ocoee',                  isNew: false },
+      '12117': { name: 'Seminole County',      cities: 'Sanford, Altamonte Springs, Casselberry, Longwood',    isNew: false },
+      '12011': { name: 'Broward County',       cities: 'Fort Lauderdale, Hollywood, Pompano Beach, Miramar',   isNew: true  },
+      '12099': { name: 'Palm Beach County',    cities: 'West Palm Beach, Boca Raton, Delray Beach, Boynton Beach', isNew: true }
+    };
+
+    var map = L.map('service-map', {
+      center: [27.3, -81.5],
+      zoom: 7,
+      scrollWheelZoom: false,
+      zoomControl: true
+    });
+
+    // CartoDB Positron — clean light tiles that make the county highlights pop
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 20
+    }).addTo(map);
+
+    function styleFor(isNew, hover) {
+      return {
+        color:       isNew ? '#c47a1a' : '#3d8c2a',
+        weight:      hover ? 2.5 : 1.5,
+        fillColor:   isNew ? '#f0a500' : '#5cba47',
+        fillOpacity: hover ? 0.52 : 0.28
+      };
+    }
+
+    function buildPopupHtml(info) {
+      var badge = info.isNew
+        ? '<span style="background:#5cba47;color:#fff;font-size:0.62rem;font-weight:700;padding:2px 7px;border-radius:20px;text-transform:uppercase;letter-spacing:0.04em;margin-left:6px;vertical-align:middle;">NEW</span>'
+        : '';
+      return '<div style="font-weight:700;font-size:0.9rem;margin-bottom:3px;">' + info.name + badge + '</div>'
+           + '<div style="font-size:0.78rem;color:#666;">' + info.cities + '</div>';
+    }
+
+    // Fetch real US Census Bureau county boundaries via us-atlas (TopoJSON)
+    fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json')
+      .then(function(r) { return r.json(); })
+      .then(function(us) {
+        // Convert topojson → geojson and filter to just our 10 FL counties
+        var allCounties = topojson.feature(us, us.objects.counties);
+        var filtered = {
+          type: 'FeatureCollection',
+          features: allCounties.features.filter(function(f) {
+            return TARGET_COUNTIES.hasOwnProperty(f.id);
+          })
+        };
+
+        // Hide loading indicator
+        var loader = document.getElementById('map-loading');
+        if (loader) loader.style.display = 'none';
+
+        if (filtered.features.length === 0) {
+          console.warn('No county features matched. Check FIPS codes.');
+          return;
+        }
+
+        var geoLayer = L.geoJSON(filtered, {
+          style: function(feature) {
+            return styleFor(TARGET_COUNTIES[feature.id].isNew, false);
+          },
+          onEachFeature: function(feature, layer) {
+            var info = TARGET_COUNTIES[feature.id];
+            layer.bindPopup(buildPopupHtml(info), { maxWidth: 240, closeButton: false });
+
+            layer.on('mouseover', function() {
+              this.setStyle(styleFor(info.isNew, true));
+              this.openPopup();
+            });
+            layer.on('mouseout', function() {
+              this.setStyle(styleFor(info.isNew, false));
+              this.closePopup();
+            });
+            layer.on('click', function() {
+              this.openPopup();
+            });
+          }
+        }).addTo(map);
+
+        // Fit map to show all highlighted counties with a little padding
+        map.fitBounds(geoLayer.getBounds(), { padding: [30, 30] });
+        setTimeout(function() { map.invalidateSize(); }, 100);
+      })
+      .catch(function(err) {
+        console.error('Failed to load county boundaries:', err);
+        var loader = document.getElementById('map-loading');
+        if (loader) loader.textContent = 'Map failed to load. Please refresh the page.';
+      });
+  </script>
+
   <script type="text/javascript">
         window.omnisend = window.omnisend || [];
         omnisend.push(["accountID", "64da4e31978825215a0ff14d"]);
@@ -178,6 +484,6 @@
         e.src="https://omnisnippet1.com/inshop/launcher-v2.js";
         var t=document.getElementsByTagName("script")[0];
         t.parentNode.insertBefore(e,t)}();
-</script>
+  </script>
 </body>
 </html>
