@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-694BNL6FGE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-694BNL6FGE');
+  gtag('config', 'G-7EMF4NCS57');
+</script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estimate how much you could save with Compact My Dumpster. Compaction means fewer hauls — enter your current hauler numbers to see your potential annual savings.">
+  <meta name="keywords" content="dumpster, hauling, trash, compacting, savings calculator, cost savings, roll-off, open-top, waste management, fewer hauls">
+  <meta name="author" content="Compact My Dumpster">
+  <title>Savings Calculator | Compact My Dumpster</title>
+  <link rel="shortcut icon" href="./assets/img/favicon.png">
+  <link rel="stylesheet" href="./assets/css/plugins.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/colors/leaf.css">
+  <link rel="preload" href="./assets/css/fonts/space.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://omnisnippet1.com">
+  <link rel="canonical" href="https://www.compactmydumpster.com/savings-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.compactmydumpster.com/savings-calculator.html">
+  <meta property="og:title" content="Savings Calculator | Compact My Dumpster">
+  <meta property="og:description" content="Compaction means fewer hauls. Enter your current numbers to estimate how much you could save with Compact My Dumpster.">
+  <meta property="og:image" content="https://www.compactmydumpster.com/assets/img/photos/roller.jpg">
+<style>
+  .cmd-calc{
+    --cmd-green:#1b4332;
+    --cmd-green-2:#2d6a4f;
+    --cmd-orange:#e8590c;
+    --cmd-orange-2:#f77f00;
+    --ink:#1d2421;
+    --muted:#6b7770;
+    --line:#e3e8e5;
+    --bg-card:#ffffff;
+    --bg-soft:#f4f7f5;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(27,67,50,.10);
+    --font:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  .cmd-calc, .cmd-calc *{box-sizing:border-box}
+  .cmd-calc{font-family:var(--font);color:var(--ink);max-width:720px;margin:0 auto;padding:4px}
+  .cmd-calc .card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .cmd-calc .hd{background:linear-gradient(135deg,var(--cmd-green),var(--cmd-green-2));color:#fff;padding:26px 28px}
+  .cmd-calc .hd .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cmd-orange-2);font-weight:700;margin:0 0 6px}
+  .cmd-calc .hd h1{font-size:23px;margin:0 0 6px;font-weight:700;line-height:1.2;color:#fff}
+  .cmd-calc .hd p{margin:0;opacity:.85;font-size:14px;color:#fff}
+  .cmd-calc .body{padding:24px 28px}
+  .cmd-calc .field{margin-bottom:20px}
+  .cmd-calc label{display:block;font-weight:600;font-size:14px;margin-bottom:8px}
+  .cmd-calc label .hint{font-weight:400;color:var(--muted);font-size:12.5px}
+
+  /* Segmented toggle */
+  .cmd-calc .seg{display:flex;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:4px;gap:4px}
+  .cmd-calc .seg button{
+    flex:1;border:none;background:transparent;font-family:inherit;font-size:13.5px;font-weight:600;
+    color:var(--muted);padding:9px 8px;border-radius:7px;cursor:pointer;transition:all .15s;
+  }
+  .cmd-calc .seg button.active{background:var(--cmd-green);color:#fff;box-shadow:0 2px 6px rgba(27,67,50,.25)}
+  .cmd-calc .model-desc{font-size:13px;color:var(--muted);line-height:1.55;background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--cmd-orange);border-radius:8px;padding:11px 14px;margin-top:10px}
+  .cmd-calc .model-desc b{color:var(--ink)}
+  .cmd-calc .model-desc .tip{display:block;margin-top:5px;color:var(--cmd-green-2);font-weight:600}
+
+  .cmd-calc .input-wrap{position:relative}
+  .cmd-calc .input-wrap .pre{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:15px;pointer-events:none}
+  .cmd-calc .input-wrap .post{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px;pointer-events:none}
+  .cmd-calc input[type=number]{
+    width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+    border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);
+    transition:border-color .15s, box-shadow .15s;-moz-appearance:textfield;
+  }
+  .cmd-calc input.has-pre{padding-left:28px}
+  .cmd-calc input.has-post{padding-right:54px}
+  .cmd-calc input[type=number]:focus{outline:none;border-color:var(--cmd-green-2);box-shadow:0 0 0 3px rgba(45,106,79,.15)}
+  .cmd-calc input[type=number]::-webkit-outer-spin-button,
+  .cmd-calc input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .cmd-calc .slider-row{display:flex;align-items:center;gap:14px}
+  .cmd-calc input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--cmd-green-2),var(--cmd-orange-2));outline:none}
+  .cmd-calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--cmd-orange);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .cmd-calc input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--cmd-orange);cursor:pointer}
+  .cmd-calc .pct-badge{min-width:58px;text-align:center;font-weight:700;font-size:15px;background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:7px 6px;color:var(--cmd-green)}
+  .cmd-calc .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .cmd-calc .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--cmd-green-2);margin:6px 0 12px}
+  .cmd-calc hr.div{border:none;border-top:1px solid var(--line);margin:24px 0}
+
+  /* Results */
+  .cmd-calc .results{margin-top:8px;background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .cmd-calc .hero{text-align:center;padding:6px 0 18px;border-bottom:1px dashed var(--line);margin-bottom:18px}
+  .cmd-calc .hero .lbl{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+  .cmd-calc .hero .big{font-size:42px;font-weight:800;color:var(--cmd-green);margin:6px 0 2px;line-height:1}
+  .cmd-calc .hero .sub{font-size:14px;color:var(--cmd-orange);font-weight:600}
+  .cmd-calc .stat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;text-align:center}
+  .cmd-calc .stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 8px}
+  .cmd-calc .stat .v{font-size:20px;font-weight:700;color:var(--ink)}
+  .cmd-calc .stat .k{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.25}
+  .cmd-calc .compare{display:flex;gap:12px;margin-top:16px}
+  .cmd-calc .compare .col{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .cmd-calc .compare .col .t{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  .cmd-calc .compare .col .m{font-size:22px;font-weight:700;margin-top:4px}
+  .cmd-calc .compare .now .m{color:var(--cmd-orange)}
+  .cmd-calc .compare .after .m{color:var(--cmd-green)}
+  .cmd-calc .breakdown{font-size:12.5px;color:var(--muted);margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;line-height:1.6}
+  .cmd-calc .breakdown b{color:var(--ink)}
+  .cmd-calc .footnote{font-size:12px;color:var(--muted);margin-top:16px;line-height:1.5;text-align:center}
+  .cmd-calc .actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+  .cmd-calc button.cta{flex:1;min-width:140px;padding:13px 18px;font-size:15px;font-weight:700;font-family:inherit;border:none;border-radius:10px;cursor:pointer;transition:transform .08s, filter .15s}
+  .cmd-calc .btn-primary{background:var(--cmd-orange);color:#fff}
+  .cmd-calc .btn-secondary{background:#fff;color:var(--cmd-green);border:1.5px solid var(--cmd-green-2)}
+  .cmd-calc button.cta:hover{filter:brightness(1.05)}
+  .cmd-calc button.cta:active{transform:translateY(1px)}
+  .cmd-calc .hidden{display:none !important}
+  @media (max-width:560px){
+    .cmd-calc .grid2{grid-template-columns:1fr}
+    .cmd-calc .stat-grid{grid-template-columns:1fr}
+    .cmd-calc .compare{flex-direction:column}
+    .cmd-calc .hero .big{font-size:36px}
+  }
+</style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <header class="wrapper bg-soft-primary my-1">
+      <nav class="navbar navbar-expand-lg center-nav navbar-light navbar-bg-light">
+        <div class="container flex-lg-row flex-nowrap align-items-center">
+          <div class="navbar-brand w-100">
+            <a href="./index.html">
+              <img src="./assets/img/logo-dark.png" alt="Compact My Dumpster logo">
+            </a>
+          </div>
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div class="offcanvas-header d-lg-none">
+              <h3 class="text-white fs-30 mb-0">Compact My Dumpster</h3>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="./about-us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./service-area.html">Service Area</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./industries-served.html">Industries</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./how-it-works.html">How It Works</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./savings-calculator.html">Savings Calculator</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./frequently-asked-questions.html">F.A.Q.</a>
+                </li>
+              </ul>
+              <div class="offcanvas-footer d-lg-none">
+                <div>
+                  <a href="mailto:hunter@compactmydumpster.com" class="link-inverse">hunter@compactmydumpster.com</a>
+                  <br><a href="tel:+18133303222" class="text-body">813-330-3222</a><br>
+                  <nav class="nav social social-white mt-4">
+                    <a href="https://www.facebook.com/profile.php?id=100087289667616"><i class="uil uil-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/compactmydumpster/"><i class="uil uil-instagram"></i></a>
+                    <a href="https://www.youtube.com/@compactmydumpster"><i class="uil uil-youtube"></i></a>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-other w-100 d-flex ms-auto">
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+              <li class="nav-item d-none d-lg-block me-2">
+                <a href="tel:+18133303222" class="fw-bold text-body" style="white-space:nowrap">
+                  <i class="uil uil-phone me-1"></i>813-330-3222
+                </a>
+              </li>
+              <li class="nav-item d-none d-md-block">
+                <a href="request.html" class="btn btn-expand btn-primary rounded-pill">
+                  <i class="uil uil-arrow-right"></i>
+                  <span>Schedule A Crush</span>
+                </a>
+              </li>
+              <li class="nav-item d-lg-none">
+                <button class="hamburger offcanvas-nav-btn"><span></span></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="wrapper bg-light">
+      <div class="container pt-10 pt-md-14 pb-14 pb-md-16">
+        <div class="row">
+          <div class="col-lg-9 col-xl-8 mx-auto text-center mb-8 mb-md-10">
+            <h2 class="display-2 mb-3">Compaction Savings Calculator</h2>
+            <p class="lead fs-24 mb-0">Compaction doesn't shrink your trash bill by magic — it lets each container hold more, so you pay for fewer hauls. Plug in your current hauler's numbers below to estimate your savings.</p>
+          </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="cmd-calc">
+          <div class="card">
+            <div class="hd">
+              <p class="kicker">Compact My Dumpster</p>
+              <h1>See How Much You Could Save</h1>
+              <p>Compaction means fewer hauls. Enter your current numbers to estimate your savings.</p>
+            </div>
+
+            <div class="body">
+
+              <!-- Pricing model -->
+              <div class="field">
+                <label>How does your hauler bill you?</label>
+                <div class="seg" id="modelSeg">
+                  <button type="button" data-model="haul" class="active">Haul + tonnage</button>
+                  <button type="button" data-model="incl">Tonnage incl.</button>
+                  <button type="button" data-model="flat">Flat rate</button>
+                </div>
+                <div class="model-desc" id="modelDesc"></div>
+              </div>
+
+              <div class="grid2">
+                <div class="field">
+                  <label for="pickups">Current pickups per month
+                    <span class="hint">— how often it's hauled now</span>
+                  </label>
+                  <input type="number" id="pickups" min="0" step="1" value="0">
+                </div>
+
+                <div class="field" id="tonField">
+                  <label>Waste weight</label>
+                  <div class="seg" id="tonSeg" style="margin-bottom:8px">
+                    <button type="button" data-ton="perhaul" class="active">Tons / haul</button>
+                    <button type="button" data-ton="permonth">Tons / month</button>
+                  </div>
+                  <div class="input-wrap">
+                    <input type="number" id="tons" class="has-post" min="0" step="0.25" value="0">
+                    <span class="post" id="tonsUnit">tons/haul</span>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="div">
+
+              <!-- Model A: Haul + per ton -->
+              <div id="modelHaul">
+                <div class="section-label">Your hauler's rates</div>
+                <div class="grid2">
+                  <div class="field">
+                    <label for="swapFee">Haul / swap fee <span class="hint">per pickup</span></label>
+                    <div class="input-wrap"><span class="pre">$</span>
+                      <input type="number" id="swapFee" class="has-pre" min="0" step="5" value="0"></div>
+                  </div>
+                  <div class="field">
+                    <label for="tonRate">Per-ton rate</label>
+                    <div class="input-wrap"><span class="pre">$</span>
+                      <input type="number" id="tonRate" class="has-pre has-post" min="0" step="5" value="0">
+                      <span class="post">/ ton</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Model B: Tonnage included -->
+              <div id="modelIncl" class="hidden">
+                <div class="section-label">Your hauler's rates</div>
+                <div class="grid2">
+                  <div class="field">
+                    <label for="baseFee">Base fee <span class="hint">per pickup</span></label>
+                    <div class="input-wrap"><span class="pre">$</span>
+                      <input type="number" id="baseFee" class="has-pre" min="0" step="5" value="0"></div>
+                  </div>
+                  <div class="field">
+                    <label for="inclTons">Tons included <span class="hint">per pickup</span></label>
+                    <div class="input-wrap">
+                      <input type="number" id="inclTons" class="has-post" min="0" step="0.5" value="0">
+                      <span class="post">tons</span></div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="overRate">Overage rate <span class="hint">— charged on weight above the allowance</span></label>
+                  <div class="input-wrap"><span class="pre">$</span>
+                    <input type="number" id="overRate" class="has-pre has-post" min="0" step="5" value="0">
+                    <span class="post">/ ton</span></div>
+                </div>
+              </div>
+
+              <!-- Model C: Flat rate -->
+              <div id="modelFlat" class="hidden">
+                <div class="section-label">Your hauler's rate</div>
+                <div class="field">
+                  <label for="flatFee">Flat rate per pickup <span class="hint">— same price no matter the weight</span></label>
+                  <div class="input-wrap"><span class="pre">$</span>
+                    <input type="number" id="flatFee" class="has-pre" min="0" step="5" value="0"></div>
+                </div>
+              </div>
+
+              <hr class="div">
+
+              <div class="section-label" style="margin-top:4px">Compaction service (CMD)</div>
+              <div class="field">
+                <label for="compRate">Compaction rate <span class="hint">— volume reduction per compaction</span></label>
+                <div class="slider-row">
+                  <input type="range" id="compRate" min="25" max="90" step="5" value="50">
+                  <span class="pct-badge" id="compRateVal">50%</span>
+                </div>
+              </div>
+              <div class="grid2">
+                <div class="field">
+                  <label for="compsPerHaul">Compactions before each haul <span class="hint">— times compacted per container</span></label>
+                  <input type="number" id="compsPerHaul" min="0" step="1" value="0">
+                </div>
+                <div class="field">
+                  <label for="compCost">Cost per compaction</label>
+                  <div class="input-wrap"><span class="pre">$</span>
+                    <input type="number" id="compCost" class="has-pre" min="0" step="5" value="0"></div>
+                </div>
+              </div>
+              <div class="breakdown" id="reductionReadout" style="margin:2px 0 0"></div>
+
+              <!-- Results -->
+              <div class="results" id="results" aria-live="polite">
+                <div class="hero">
+                  <div class="lbl">Estimated Annual Savings</div>
+                  <div class="big" id="annual">$0</div>
+                  <div class="sub" id="monthly">$0 / month</div>
+                </div>
+
+                <div class="stat-grid">
+                  <div class="stat"><div class="v" id="haulsBefore">0</div><div class="k">Hauls / month now</div></div>
+                  <div class="stat"><div class="v" id="haulsAfter">0</div><div class="k">Hauls / month after</div></div>
+                  <div class="stat"><div class="v" id="compactions">0</div><div class="k">Compactions / month</div></div>
+                </div>
+
+                <div class="compare">
+                  <div class="col now"><div class="t">Current cost / mo</div><div class="m" id="costNow">$0</div></div>
+                  <div class="col after"><div class="t">With compaction / mo</div><div class="m" id="costAfter">$0</div></div>
+                </div>
+
+                <div class="compare">
+                  <div class="col now"><div class="t">True cost / ton now</div><div class="m" id="cptNow">$0</div></div>
+                  <div class="col after"><div class="t">Cost / ton after</div><div class="m" id="cptAfter">$0</div></div>
+                </div>
+
+                <div class="breakdown" id="breakdown"></div>
+
+                <div class="actions">
+                  <button class="cta btn-primary" id="pdfBtn">Download My Savings Report</button>
+                  <button class="cta btn-secondary" id="quoteBtn">Get My Exact Quote</button>
+                  <button class="cta btn-secondary" id="resetBtn">Reset</button>
+                </div>
+
+                <p class="footnote">Estimate only, based on the figures you entered. Actual savings depend on your waste type,
+                container size, weight limits, and contract terms. Contact Compact My Dumpster for a precise quote.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.cmd-calc -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer>
+    <div class="container py-12">
+      <div class="d-md-flex align-items-center justify-content-between">
+        <p class="mb-2 mb-lg-0">© 2025 American Trash LLC. All rights reserved.</p>
+        <nav class="nav social social-muted mb-0 text-md-end">
+          <a href="https://www.facebook.com/profile.php?id=100087289667616"><i class="uil uil-facebook-f"></i></a>
+          <a href="https://www.instagram.com/compactmydumpster/"><i class="uil uil-instagram"></i></a>
+          <a href="https://www.youtube.com/@compactmydumpster"><i class="uil uil-youtube"></i></a>
+        </nav>
+        <!-- /.social -->
+      </div>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  <script src="./assets/js/plugins.js"></script>
+  <script src="./assets/js/theme.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+(function(){
+  // ============ CONFIG ============
+  var CONFIG = {
+    quoteUrl: "request.html",   // CMD quote / scheduling page
+    defaults: {
+      model:"haul", tonMode:"perhaul",
+      pickups:0, tons:0,
+      compRate:50, compsPerHaul:0, compCost:0,  // CMD compaction service
+      swapFee:0, tonRate:0,           // Model A
+      baseFee:0, inclTons:0, overRate:0, // Model B
+      flatFee:0                        // Model C
+    }
+  };
+  // ================================
+
+  var $ = function(id){ return document.getElementById(id); };
+  var state = { model:"haul", tonMode:"perhaul" };
+  var last = {};   // snapshot of the latest calculation, used to build the PDF
+
+  // Plain-language explanations to help prospects spot their billing type.
+  var MODEL_DESC = {
+    haul: '<b>Two charges every pickup.</b> A flat "haul" or "swap" fee just to send the truck, ' +
+          'plus a separate weight charge billed per ton dumped at the landfill.' +
+          '<span class="tip">On your bill: a per-pickup fee AND a "$ / ton" line.</span>',
+    incl: '<b>One price per pickup that already includes some weight</b> (for example, 3 tons). ' +
+          'Go over that limit and you pay an "overage" rate for each extra ton.' +
+          '<span class="tip">On your bill: an included-tons allowance AND an overage rate.</span>',
+    flat: '<b>One fixed price per pickup</b> — same cost no matter the weight.' +
+          '<span class="tip">On your bill: a single per-pickup price, with no weight line.</span>'
+  };
+
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function num(el){ var v = parseFloat(el.value); return isNaN(v) || v < 0 ? 0 : v; }
+  function fmt(n){ return (Math.round(n*10)/10).toLocaleString('en-US'); }
+
+  // ---- toggles ----
+  function setModel(m){
+    state.model = m;
+    Array.prototype.forEach.call($('modelSeg').children, function(b){
+      b.classList.toggle('active', b.dataset.model === m);
+    });
+    $('modelHaul').classList.toggle('hidden', m !== 'haul');
+    $('modelIncl').classList.toggle('hidden', m !== 'incl');
+    $('modelFlat').classList.toggle('hidden', m !== 'flat');
+    $('modelDesc').innerHTML = MODEL_DESC[m] || '';
+    calc();
+  }
+  function setTonMode(t){
+    state.tonMode = t;
+    Array.prototype.forEach.call($('tonSeg').children, function(b){
+      b.classList.toggle('active', b.dataset.ton === t);
+    });
+    $('tonsUnit').textContent = (t === 'perhaul') ? 'tons/haul' : 'tons/mo';
+    calc();
+  }
+  Array.prototype.forEach.call($('modelSeg').children, function(b){
+    b.addEventListener('click', function(){ setModel(b.dataset.model); });
+  });
+  Array.prototype.forEach.call($('tonSeg').children, function(b){
+    b.addEventListener('click', function(){ setTonMode(b.dataset.ton); });
+  });
+
+  // ---- core calculation ----
+  function calc(){
+    var pickups   = num($('pickups'));
+    var compRate  = num($('compRate')) / 100;
+    var k         = Math.max(0, num($('compsPerHaul')));
+    var tonsInput = num($('tons'));
+
+    var loadsPerHaul = 1 + k * compRate;
+    var haulsAfter   = loadsPerHaul > 0 ? pickups / loadsPerHaul : pickups;
+    var reduction    = pickups > 0 ? 1 - haulsAfter / pickups : 0;
+    var totalTons    = (state.tonMode === 'perhaul') ? tonsInput * pickups : tonsInput;
+
+    var compCost    = num($('compCost'));
+    var compactions = k * haulsAfter;
+    var cmdFee      = compactions * compCost;
+
+    var costNow = 0, costAfter = 0, note = '';
+
+    if (state.model === 'haul') {
+      var swap = num($('swapFee')), tonRate = num($('tonRate'));
+      costNow   = pickups    * swap + totalTons * tonRate;
+      costAfter = haulsAfter * swap + totalTons * tonRate + cmdFee;
+      note = 'Tonnage charges ('+money(totalTons*tonRate)+'/mo on '+fmt(totalTons)+
+             ' tons) are the same either way — your savings come from '+
+             fmt(pickups-haulsAfter)+' fewer haul fees of '+money(swap)+' each.';
+    } else if (state.model === 'flat') {
+      var flat = num($('flatFee'));
+      costNow   = pickups    * flat;
+      costAfter = haulsAfter * flat + cmdFee;
+      note = 'Flat rate is the best case for compaction: every eliminated haul saves the full '+
+             money(flat)+', with no tonnage charges to offset it. That’s '+
+             fmt(pickups-haulsAfter)+' fewer pickups a month.';
+    } else {
+      var base = num($('baseFee')), incl = num($('inclTons')), over = num($('overRate'));
+      var tphNow   = pickups > 0 ? totalTons / pickups : 0;
+      var tphAfter = haulsAfter > 0 ? totalTons / haulsAfter : 0;
+      var overNow   = pickups    * Math.max(0, tphNow   - incl) * over;
+      var overAfter = haulsAfter * Math.max(0, tphAfter - incl) * over;
+      costNow   = pickups    * base + overNow;
+      costAfter = haulsAfter * base + overAfter + cmdFee;
+      note = 'Base fees drop by '+money((pickups-haulsAfter)*base)+'/mo. '+
+             (overAfter > overNow
+               ? 'Packing more weight per haul adds '+money(overAfter-overNow)+'/mo in overage, '+
+                 'which is already netted out of the savings above.'
+               : 'No added overage at these weights.');
+    }
+
+    var monthlySave  = costNow - costAfter;
+    var annualSave   = monthlySave * 12;
+    var pctSave      = costNow > 0 ? Math.max(0, monthlySave) / costNow * 100 : 0;
+
+    var cptNow   = totalTons > 0 ? costNow   / totalTons : 0;
+    var cptAfter = totalTons > 0 ? costAfter / totalTons : 0;
+
+    var compNote = ' Compaction itself runs <b>'+money(cmdFee)+'/mo</b> ('+
+                   fmt(compactions)+' compactions × '+money(compCost)+'), already subtracted above.';
+
+    $('compRateVal').textContent  = Math.round(compRate*100) + '%';
+    $('reductionReadout').innerHTML = 'At '+Math.round(compRate*100)+'% × '+fmt(k)+
+      ' compactions, each container holds '+fmt(loadsPerHaul)+'× the material — a <b>'+
+      Math.round(reduction*100)+'% cut in hauls</b>.';
+    $('annual').textContent   = money(Math.max(0, annualSave));
+    $('monthly').innerHTML    = money(Math.max(0, monthlySave)) + ' / month &middot; <b>' +
+                                Math.round(pctSave) + '% lower</b>';
+    $('haulsBefore').textContent = fmt(pickups);
+    $('haulsAfter').textContent  = fmt(haulsAfter);
+    $('compactions').textContent = fmt(compactions);
+    $('costNow').textContent   = money(costNow);
+    $('costAfter').textContent = money(costAfter);
+    $('cptNow').textContent    = totalTons > 0 ? money(cptNow)   + ' /ton' : '—';
+    $('cptAfter').textContent  = totalTons > 0 ? money(cptAfter) + ' /ton' : '—';
+    $('breakdown').innerHTML   = note + compNote;
+
+    // Snapshot raw values for the PDF report.
+    last = {
+      model: state.model, tonMode: state.tonMode,
+      pickups: pickups, tonsInput: tonsInput, totalTons: totalTons,
+      compRatePct: Math.round(compRate*100), k: k, compCost: compCost,
+      haulsAfter: haulsAfter, compactions: compactions, reduction: reduction,
+      costNow: costNow, costAfter: costAfter,
+      monthlySave: monthlySave, annualSave: annualSave, pctSave: pctSave,
+      cptNow: cptNow, cptAfter: cptAfter, cmdFee: cmdFee,
+      swapFee: num($('swapFee')), tonRate: num($('tonRate')),
+      baseFee: num($('baseFee')), inclTons: num($('inclTons')), overRate: num($('overRate')),
+      flatFee: num($('flatFee'))
+    };
+  }
+
+  // ---- branded PDF report (client-side, no email/server) ----
+  function buildPDF(){
+    if (!window.jspdf || !window.jspdf.jsPDF){
+      alert('The PDF tool is still loading — please try again in a moment.');
+      return;
+    }
+    calc(); // make sure `last` reflects current inputs
+    var L = last;
+    var doc = new window.jspdf.jsPDF({ unit:'pt', format:'letter' });
+    var W = doc.internal.pageSize.getWidth();
+    var H = doc.internal.pageSize.getHeight();
+    var M = 48;
+
+    var green=[27,67,50], orange=[232,89,12], ink=[29,36,33],
+        muted=[107,119,112], soft=[244,247,245], line=[227,232,229];
+    function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+    function fmt(n){ return (Math.round(n*10)/10).toLocaleString('en-US'); }
+
+    // Header band
+    doc.setFillColor.apply(doc, green); doc.rect(0,0,W,96,'F');
+    doc.setTextColor.apply(doc, orange); doc.setFont('helvetica','bold'); doc.setFontSize(9);
+    doc.text('COMPACT MY DUMPSTER', M, 38);
+    doc.setTextColor(255,255,255); doc.setFontSize(22);
+    doc.text('Your Estimated Savings', M, 64);
+    doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(220,230,224);
+    var d = new Date();
+    doc.text('Prepared ' + d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}), M, 82);
+
+    // Hero savings box
+    var y = 130;
+    doc.setFillColor.apply(doc, soft); doc.setDrawColor.apply(doc, line);
+    doc.roundedRect(M, y, W-2*M, 88, 8, 8, 'FD');
+    doc.setTextColor.apply(doc, muted); doc.setFont('helvetica','bold'); doc.setFontSize(9);
+    doc.text('ESTIMATED ANNUAL SAVINGS', W/2, y+24, {align:'center'});
+    doc.setTextColor.apply(doc, green); doc.setFontSize(34);
+    doc.text(money(Math.max(0,L.annualSave)), W/2, y+60, {align:'center'});
+    doc.setTextColor.apply(doc, orange); doc.setFontSize(11);
+    doc.text(money(Math.max(0,L.monthlySave)) + ' / month   |   ' + Math.round(L.pctSave) + '% lower',
+             W/2, y+79, {align:'center'});
+    y += 88 + 30;
+
+    // Comparison table
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor.apply(doc, ink);
+    doc.text('Current vs. with compaction', M, y); y += 16;
+    var tW = W-2*M, rowH = 26;
+    var c2 = M + tW*0.5, c3 = M + tW*0.75;
+    doc.setFillColor.apply(doc, green); doc.rect(M, y, tW, rowH, 'F');
+    doc.setTextColor(255,255,255); doc.setFont('helvetica','bold'); doc.setFontSize(9.5);
+    doc.text('Metric', M+12, y+17);
+    doc.text('Now', c2+12, y+17);
+    doc.text('With CMD', c3+12, y+17);
+    y += rowH;
+    var rows = [
+      ['Hauls per month', fmt(L.pickups), fmt(L.haulsAfter)],
+      ['Monthly cost', money(L.costNow), money(L.costAfter)],
+      ['True cost per ton', L.totalTons>0?money(L.cptNow)+'/ton':'—', L.totalTons>0?money(L.cptAfter)+'/ton':'—']
+    ];
+    rows.forEach(function(r,i){
+      if(i%2===0){ doc.setFillColor.apply(doc, soft); doc.rect(M,y,tW,rowH,'F'); }
+      doc.setDrawColor.apply(doc, line); doc.line(M, y+rowH, M+tW, y+rowH);
+      doc.setTextColor.apply(doc, ink); doc.setFont('helvetica','normal'); doc.setFontSize(10);
+      doc.text(r[0], M+12, y+17);
+      doc.setTextColor.apply(doc, orange); doc.setFont('helvetica','bold'); doc.text(String(r[1]), c2+12, y+17);
+      doc.setTextColor.apply(doc, green); doc.text(String(r[2]), c3+12, y+17);
+      y += rowH;
+    });
+    y += 28;
+
+    // Inputs recap
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor.apply(doc, ink);
+    doc.text('The numbers you entered', M, y); y += 20;
+    var modelLabel = { haul:'Haul + tonnage', incl:'Tonnage included', flat:'Flat rate' }[L.model];
+    var lines = [];
+    lines.push(['Billing model', modelLabel]);
+    lines.push(['Current pickups / month', fmt(L.pickups)]);
+    lines.push(['Waste weight', fmt(L.tonsInput)+' '+(L.tonMode==='perhaul'?'tons / haul':'tons / month')+'  ('+fmt(L.totalTons)+' tons/mo)']);
+    if (L.model==='haul'){ lines.push(['Haul / swap fee', money(L.swapFee)+' per pickup']); lines.push(['Per-ton rate', money(L.tonRate)+' / ton']); }
+    else if (L.model==='incl'){ lines.push(['Base fee', money(L.baseFee)+' per pickup']); lines.push(['Tons included', fmt(L.inclTons)+' / pickup']); lines.push(['Overage rate', money(L.overRate)+' / ton']); }
+    else { lines.push(['Flat rate', money(L.flatFee)+' per pickup']); }
+    lines.push(['Compaction rate', L.compRatePct+'%']);
+    lines.push(['Compactions before each haul', fmt(L.k)]);
+    lines.push(['Cost per compaction', money(L.compCost)]);
+    doc.setFontSize(10);
+    lines.forEach(function(r){
+      doc.setTextColor.apply(doc, muted); doc.setFont('helvetica','normal'); doc.text(r[0], M, y);
+      doc.setTextColor.apply(doc, ink); doc.setFont('helvetica','bold'); doc.text(String(r[1]), W-M, y, {align:'right'});
+      y += 18;
+    });
+    y += 12;
+
+    // Footnote
+    doc.setDrawColor.apply(doc, line); doc.line(M, y, W-M, y); y += 16;
+    doc.setTextColor.apply(doc, muted); doc.setFont('helvetica','normal'); doc.setFontSize(8.5);
+    var fn = 'Estimate only, based on the figures you entered. Actual savings depend on your waste type, container size, weight limits, and contract terms. Contact Compact My Dumpster for a precise quote.';
+    doc.text(doc.splitTextToSize(fn, W-2*M), M, y);
+
+    // Contact band
+    var by = H-70;
+    doc.setFillColor.apply(doc, green); doc.rect(0, by, W, 70, 'F');
+    doc.setTextColor(255,255,255); doc.setFont('helvetica','bold'); doc.setFontSize(12);
+    doc.text('Ready for an exact quote?', M, by+30);
+    doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(220,230,224);
+    doc.text('813-330-3222   |   hunter@compactmydumpster.com   |   compactmydumpster.com', M, by+50);
+
+    doc.save('CMD-Savings-Estimate.pdf');
+  }
+
+  ['pickups','tons','compRate','compsPerHaul','compCost','swapFee','tonRate','baseFee','inclTons','overRate','flatFee']
+    .forEach(function(id){ $(id).addEventListener('input', calc); });
+
+  $('resetBtn').addEventListener('click', function(){
+    var d = CONFIG.defaults;
+    $('pickups').value=d.pickups; $('tons').value=d.tons;
+    $('compRate').value=d.compRate; $('compsPerHaul').value=d.compsPerHaul; $('compCost').value=d.compCost;
+    $('swapFee').value=d.swapFee; $('tonRate').value=d.tonRate;
+    $('baseFee').value=d.baseFee; $('inclTons').value=d.inclTons; $('overRate').value=d.overRate;
+    $('flatFee').value=d.flatFee;
+    setTonMode(d.tonMode); setModel(d.model);
+  });
+
+  $('quoteBtn').addEventListener('click', function(){
+    if (CONFIG.quoteUrl){ window.location.href = CONFIG.quoteUrl; }
+  });
+
+  $('pdfBtn').addEventListener('click', buildPDF);
+
+  // init
+  setTonMode(CONFIG.defaults.tonMode);
+  setModel(CONFIG.defaults.model);
+})();
+  </script>
+  <script type="text/javascript">
+        window.omnisend = window.omnisend || [];
+        omnisend.push(["accountID", "64da4e31978825215a0ff14d"]);
+        omnisend.push(["track", "$pageViewed"]);
+        !function(){var e=document.createElement("script");
+        e.type="text/javascript",e.async=!0,
+        e.src="https://omnisnippet1.com/inshop/launcher-v2.js";
+        var t=document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e,t)}();
+</script>
+</body>
+</html>
